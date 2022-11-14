@@ -1,7 +1,7 @@
 import random
 replay = True
 
-print("Bienvenue dans le Juste Prix !")
+print("Bienvenue dans le Juste Prix !\n")
 
 # Fonction pour rejouer la partie
 
@@ -25,10 +25,11 @@ def replay_game():
 # Fonction pour tester si la valeur est bien un nombre entier
 
 
-def tryValue():
+def tryValue(start, end):
     boucle = True
     while boucle:
-        choice = input("Veuillez choisir un nombre : ")
+        choice = input("Veuillez choisir un nombre entre " +
+                       str(start) + " et " + str(end) + " : ")
         if choice.isdigit():
             boucle = False
         else:
@@ -52,21 +53,21 @@ def game():
     end = int(input("Choisissez la fin de l'intervalle : "))
     number = random.randint(start, end)
     life = int(input("Choisissez un nombre de vie : "))
-    choice = tryValue()
+    choice = tryValue(start, end)
     while choice != number and life > 0:
         if choice < number:
             life -= 1
             less_or_more("C'est plus !", life)
-            choice = tryValue()
+            choice = tryValue(start, end)
         elif choice > number:
             life -= 1
             less_or_more("C'est moins !", life)
-            choice = tryValue()
+            choice = tryValue(start, end)
 
     if life > 0:
         print("Gagné !")
     else:
-        print("Perdu !")
+        print("Perdu ! Le nombre était : " + str(number))
 
 
 # Boucle pour rejouer à l'infi si l'on choisi oui
