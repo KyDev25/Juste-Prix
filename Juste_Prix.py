@@ -3,7 +3,7 @@ replay = True
 
 print("Bienvenue dans le Juste Prix !\n")
 
-# Fonction pour rejouer la partie
+# Function to play again
 
 
 def replay_game():
@@ -22,7 +22,7 @@ def replay_game():
             print("Veuillez entrer 'o' ou 'n'")
             answer = True
 
-# Fonction pour tester si la valeur est bien un nombre entier
+# Function to try value
 
 
 def tryValue(start, end):
@@ -37,7 +37,7 @@ def tryValue(start, end):
             boucle = True
     return int(choice)
 
-# Fonction pour montrer si c'est plus ou moins que le nombre séléctionné aléatoirement
+# Function to determinate if number choice are less or more
 
 
 def less_or_more(answer, life):
@@ -45,7 +45,7 @@ def less_or_more(answer, life):
     print("Nombre de vie : ", life)
     return answer
 
-# Fonction qui est la base du jeux Juste Prix
+# Functio which is the basis of the game
 
 
 def game():
@@ -70,7 +70,7 @@ def game():
         print("Perdu ! Le nombre était : " + str(number))
 
 
-# Boucle pour rejouer à l'infi si l'on choisi oui
+# Loop that plays again until the user answers yes
 
 while replay:
     game()
